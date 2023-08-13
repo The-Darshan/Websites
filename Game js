@@ -1,0 +1,63 @@
+var timer =60;
+var score = 0;
+var a = document.querySelector("#boxh");
+a.setAttribute("style","color : green ;display:flex ;justify-content:center;align-items:center;");
+function Target(a){
+a.innerHTML = Math.floor(Math.random()*10);
+}
+Target(a);
+
+var c = document.querySelector("#boxs");
+c.setAttribute("style","color : green ;display:flex ;justify-content:center;align-items:center;");
+c.innerHTML=score;
+
+var b = document.querySelector("#boxt");
+b.setAttribute("style","color : green ;display:flex ;justify-content:center;align-items:center;");
+b.innerHTML=60;
+var dil= document.querySelector("#button");;
+// dil.setAttribute("style","background-color:red")
+var q= document.querySelector(".table");
+function runtime(){
+    var a =setInterval(function(){
+        if(timer>0){
+            timer--;
+            document.querySelector("#boxt").innerHTML=timer;
+        }
+        else if(timer ==0){
+           q.innerHTML=`GAME OVER <br> SCORE : ${c.innerHTML}`
+        //    q.innerHTML=`${dil.innerHTML}`
+           q.setAttribute("style" ,"color:red;background-color:black;font-weight:900;font-size:40px;display: flex;align-items: center;justify-content: center;")
+           clearInterval(a)
+        }
+    },1000)
+    }
+    runtime();
+var c = document.querySelector("#boxs");
+c.setAttribute("style","color : green ;display:flex ;justify-content:center;align-items:center;");
+c.innerHTML=score;
+
+function bubbleMaker(){
+var no="";
+var clutter ="";
+for(var i=1;i<=468;i++){
+    no =Math.floor(Math.random()*10)
+    clutter += `<div class="bubble">${no}</div>`;
+}
+document.querySelector("#apple").innerHTML=clutter;
+}
+bubbleMaker();
+var ans =0;
+var x = document.querySelector("#apple")
+x.addEventListener("click",function(deta){
+ans = deta.target;
+if(ans.innerHTML === a.innerHTML){
+    c.innerHTML=Number(c.innerHTML)+10;
+    Target(a);
+    bubbleMaker();
+    runtime();
+}
+else{
+    alert("galat h");
+}
+})
+
