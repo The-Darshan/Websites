@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bubble Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="stlye.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="table">
+            <div class="nav">
+                <div id="box1">
+                    <div id="Hit">Hit</div>
+                    <div id="boxh"></div>
+                </div>
+              
+                <div id="box2">
+                    <div id="Timer">Timer</div>
+                    <div id="boxt"></div>
+                </div>
+                
+                <div id="box3">
+                    <div id="score">Score</div>
+                    <div id="boxs"></div>
+                </div>
+            </div>
+
+            <div id="apple">
+            </div>
+
+            <div id="button">
+                <i  id="arrow" class="ri-send-plane-2-fill"></i>
+            </div>
+        </div>
+    </div>
+<script src="condition1.js"></script>
+</body>
+</html>
