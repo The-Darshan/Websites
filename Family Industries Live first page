@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Family Industries Live</title>
+    <link rel="stylesheet" href="stlye.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <img src="https://familyindustrieslive.com/wp-content/themes/family-industries/img/logo@2x.png" alt="Logo">
+            <div class="ele1">
+            <h2>Software</h2>
+            <h2>Case Studies</h2>
+            <h2>Experiences</h2>
+            <h2>Team</h2>
+            <h2>Stories</h2>
+            </div>
+            <div class="button">Get Started</div>
+        </div>
+         <div class="content">
+            <div class="leftbox">
+                <h1>MERCH REDEFINED</h1>
+                <p>Our on-site merch customization experiences transform your event attendees into artists, creators, and product designers.</p>
+                <div class="buttons">
+                <div class="button1">Get Started 
+                    <i class="ri-arrow-right-line"></i>
+                </div>
+                <div class="button2">Experience Generator</div>
+                </div>
+            </div>
+            <div class="rightbox">
+                
+                <video autoplay muted loop 
+                src="https://familyindustrieslive.com/wp-content/uploads/2023/06/hero-gifs-6-1.webm" type="video/mp4"></video>
+            </div>
+         </div>
+    </div>
+</body>
+</html>
+
+//CSS
+
+/* @import url('https://fonts.googleapis.com/css?family=Zuume&display=swap'); */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    /* font-family: 'Zuume',sans-serif; */
+    overflow-y: hidden;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+    background-color:#0F0F0F;
+}
+.nav>img{
+    width: 100px;
+    height: 50px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 300px 0 140px;
+}
+.ele1{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+.button{
+    font-size: 20px;
+    padding: 15px 20px;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    width: 150px;
+    height: 55px;
+    font-weight: 500;
+}
+.content{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 100%;
+    height: 101%;
+}
+.leftbox{
+    /* background-color: red; */
+    height: 100%;
+    width: 45%;
+    padding: 100px 0px 0px 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.leftbox>h1{
+    width: 100%;
+    line-height: 90px;
+    background-image: url(https://media2.giphy.com/media/HkEDr0jVekaZO/giphy.gif?cid=790b76115151ed408a9cae4539eb6351baba5d85998ab783&ct=g&rid=giphy.gif);
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 110px;
+    font-weight: 999;
+}
+.leftbox>p{
+    width: 500px;
+    font-size: 30px;
+    opacity: 0.5;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 600;
+}
+.button1{
+border-radius: 20px;
+color: black;
+background-color: #A9FF5C;
+width: 230px;
+height: 80px;
+font-size: 25px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.button1>i{
+    color: black;
+}
+.button2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 80px;
+    color: black;
+    background-color: white;
+    font-size: 25px;
+}
+.rightbox{
+    padding-bottom: 100px;
+    /* position: relative; */
+    /* bottom: 0; */
+    /* background-color: yellow; */
+    display: flex;
+    /* justify-content: end; */
+    /* align-items: end; */
+    width: 50%;
+    height: 100%;
+    transform: scale(1.2);
+}
