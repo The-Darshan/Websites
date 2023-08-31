@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Request Acceptor</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="scale.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="card">
+            <img src="https://e1.pxfuel.com/desktop-wallpaper/777/674/desktop-wallpaper-2-ultima-attitude-cute-cartoon-girl-for-dp-attitude-anime-girl-thumbnail.jpg" alt="" id="photo">
+            <div id="name">Riya</div>
+            <div id="check">Stranger</div>
+            <div id="button"> <i class="ri-add-line"></i> Add Friend</div>
+        </div>
+    </div>
+
+<script src="scale.js"></script>
+</body>
+</html>
+
+//CSS
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+}
+#wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(31, 137, 179);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#card{
+    height: 600px;
+    width: 500px;
+    background-color: white;
+    border-radius:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+#photo{
+    width: 450px;
+    height: 300px;
+    border-radius: 40px;
+    object-fit: cover;
+}
+#name{
+    font-size: 40px;
+    font-weight: 999;
+}
+#check{
+    font-size: 32px;
+    font-weight: 999;
+    color: red;
+}
+#button{
+    font-size: 32px;
+    background-color: purple;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    gap: 20px;
+    color: white;
+}
+#button:hover{
+    cursor: pointer;
+}
+
+//JAVASCRIPT
+
+const  buttonClick = document.querySelector("#button");
+const friendCheck = document.querySelector("#check");
+let a = true;
+buttonClick.addEventListener("click",()=>{
+    if(a==true){
+    friendCheck.innerHTML = "Friends";
+    friendCheck.setAttribute("style","color:green");
+    buttonClick.innerHTML = "Remove Friend";
+    a=false;
+    }
+    else{
+        friendCheck.innerHTML = "Stranger";
+        friendCheck.setAttribute("style","color:red");
+        buttonClick.innerHTML = "<i class=ri-add-line></i> Add Friend";
+        a=true;
+    }
+})
