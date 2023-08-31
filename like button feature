@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>like animation</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="scale.css">
+</head>
+<body>
+    
+<div id="wrapper">
+    <img src="https://e1.pxfuel.com/desktop-wallpaper/777/674/desktop-wallpaper-2-ultima-attitude-cute-cartoon-girl-for-dp-attitude-anime-girl-thumbnail.jpg" alt="" id="photo">
+    <i id="heart" class="ri-heart-fill"></i>
+</div>
+<script src="scale.js"></script>
+</body>
+</html>
+
+//CSS
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+}
+#wrapper{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#photo{
+    width: 400px;
+    height: 500px;
+    border-radius: 40px;
+}
+#heart{
+    position: absolute;
+    z-index: 1;
+    font-size: 75px;
+    scale: 0;
+    color: white;
+    transition: scale ease 0.5s;
+}
+
+//JAVASCRIPT
+
+const photoclick = document.querySelector("#photo");
+const love = document.querySelector("#heart");
+
+
+photoclick.addEventListener("dblclick",function(){
+    love.setAttribute("style","opacity:0.8");
+    love.setAttribute("style","scale:3");
+    setTimeout(function(){
+        love.setAttribute("style","opacity:0");
+    },1000)
+})
