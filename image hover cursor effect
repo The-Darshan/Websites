@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="scale.css">
+</head>
+<body>
+
+    <div id="wrapper">
+        <div id="ele1">
+            <h1>Pav Bhaji</h1>
+            <img id="pavbhaji" src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/11/pav-bhaji.jpg" alt="PavBhaji">
+        </div>
+        <div id="ele2">
+            <h1>Sandwitch</h1>
+            <img id="Sandwitch" src="https://t4.ftcdn.net/jpg/03/32/76/85/360_F_332768568_NCMldPxcZGGjMwoKm6EJlGGg8U9Ggqet.jpg" alt="">
+        </div>
+        <div id="ele3">
+            <h1>Golgappa</h1>
+            <img id="golgappa" src="https://www.vegrecipesofindia.com/wp-content/uploads/2018/05/golgappa-pani-recipe-1.jpg" alt="">
+        </div>
+    </div>
+
+    <script src="scale.js"></script>
+</body>
+</html>
+
+//CSS
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+html,body{
+    height: 100vh;
+    width: 100vw;
+}
+#wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+#ele1{
+    height: 120px;
+    width: 100%;
+    border-bottom: 3px solid white;
+    font-size: 50px;
+    position: relative;
+}
+#ele2{
+    height: 120px;
+    width: 100%;
+    border-bottom: 3px solid white;
+    font-size: 50px;
+    position: relative;
+}
+#ele3{
+    height: 120px;
+    width: 100%;
+    border-bottom: 3px solid white;
+    font-size: 50px;
+    position: relative;
+}
+img{
+    width: 118px;
+    height: 118px;
+    position: absolute;
+    top: 0;
+    border-radius: 100%;
+    opacity: 0;
+}
+#ele1:hover img{
+    opacity: 1;
+}
+#ele2:hover img{
+    opacity: 1;
+}
+#ele3:hover img{
+    opacity: 1;
+}
+
+//JAVASCRIPT
+
+let cursor1 = document.querySelector("#ele1");
+let img1 = document.querySelector("#pavbhaji");
+
+let cursor2 = document.querySelector("#ele2");
+let img2 = document.querySelector("#Sandwitch");
+
+let cursor3 = document.querySelector("#ele3");
+let img3 = document.querySelector("#golgappa");
+
+cursor1.addEventListener("mousemove",(e)=>{
+    img1.style.left = e.x-59+"px";
+    img1.style.top = e.y-59+"px";
+})
+
+cursor2.addEventListener("mousemove",(e)=>{
+    if(e.y>120 && e.y<=239){
+        img2.style.left = e.x-59+"px";
+        img2.style.top = e.y-179+"px";
+    }
+})
+
+cursor3.addEventListener("mousemove",(e)=>{
+    if(e.y>239){
+    img3.style.left = e.x-59+"px";
+    img3.style.top = e.y-299+"px";
+    }
+})
