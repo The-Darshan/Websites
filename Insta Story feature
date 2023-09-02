@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Story</title>
+    <link rel="stylesheet" href="scale.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="igpage">
+            <div class="stories">
+                <div class="img">
+                    <img src="https://images.unsplash.com/photo-1693443760721-93025350bf03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="">
+                </div>
+                <div class="img">
+                    <img src="https://plus.unsplash.com/premium_photo-1693011410217-87dd1aa328e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="">
+                </div>
+                <div class="img">
+                    <img src="https://images.unsplash.com/photo-1682685796444-acc2f5c1b7b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="">
+                </div>
+                <div class="img">
+                    <img src="https://images.unsplash.com/photo-1682687220305-ce8a9ab237b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="">
+                </div>
+            </div>
+        </div>
+        <img id="photo" src="https://images.unsplash.com/photo-1682687220566-5599dbbebf11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80" alt="">
+        <img id="photo" src="https://images.unsplash.com/photo-1653953893860-b8f756596132?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="">
+        <img id="photo" src="https://images.unsplash.com/photo-1693336431208-91098a90e155?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="">
+        <img id="photo" src="https://images.unsplash.com/photo-1682685797229-b2930538da47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="">
+    </div>
+    
+<script src="scale.js"></script>
+</body>
+</html>
+
+//CSS
+
+x*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+html,body{
+    height: 100vh;
+    width: 100vw;
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(10, 163, 223);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.igpage{
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+.stories{
+    width: 100%;
+    height: 22%;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-content:center;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 10px;
+    padding-left: 10px;
+}
+.stories::-webkit-scrollbar{
+    display: none;
+}
+.stories>div>img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+.img>img{
+    background: linear-gradient(rgb(255,174,0) , orange, rgb(255,32,69) ,purple ,blue);
+    padding: 5px;
+}
+#photo{
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+}
+
+//JAVASCRIPT
+
+let storyicon = document.querySelectorAll(".img");
+let story = document.querySelectorAll("#photo")
+
+storyicon.forEach((val,indx)=>{
+   
+    val.addEventListener("click",()=>{
+        story[indx].setAttribute("style","z-index:3");
+    setTimeout(()=>{
+        story[indx].setAttribute("style","z-index:-1");
+    },2000)
+    }
+    )
+
+}
+)
