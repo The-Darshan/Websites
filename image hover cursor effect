@@ -99,6 +99,13 @@ cursor1.addEventListener("mousemove",(e)=>{
     img1.style.left = e.x-59+"px";
     img1.style.top = e.y-59+"px";
 })
+cursor1.addEventListener("mouseenter",(e)=>{
+    img1.style.opacity=1;
+})
+
+cursor1.addEventListener("mouseleave",(e)=>{
+    img1.style.opacity=0;
+})
 
 cursor2.addEventListener("mousemove",(e)=>{
     if(e.y>120 && e.y<=239){
@@ -106,10 +113,23 @@ cursor2.addEventListener("mousemove",(e)=>{
         img2.style.top = e.y-179+"px";
     }
 })
+cursor2.addEventListener("mouseenter",(e)=>{
+    img2.style.opacity=1;
+})
 
+cursor2.addEventListener("mouseleave",(e)=>{
+    img2.style.opacity=0;
+})
 cursor3.addEventListener("mousemove",(e)=>{
     if(e.y>239){
     img3.style.left = e.x-59+"px";
     img3.style.top = e.y-299+"px";
     }
+})
+cursor3.addEventListener("mouseenter",(e)=>{
+    img3.style.opacity=1;
+})
+
+cursor3.addEventListener("mouseleave",(e)=>{
+    img3.style.opacity=0;
 })
