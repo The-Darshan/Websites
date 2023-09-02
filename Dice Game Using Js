@@ -160,6 +160,9 @@ else{
     dice1.innerHTML="<img class=plyr1 src=./dices/dice6.png alt=Dice6>";
 }
 
+//SHORTCUT OF ABOVE If-else => 
+//document.querySelector(".plyr1").setAttribute("src","./dices/dice" +a+".png").
+
 if(b== 1){
     dice2.innerHTML="<img class=plyr1 src=./dices/dice1.png alt=Dice6>";
 }
@@ -178,6 +181,8 @@ else if(b==5){
 else{
     dice2.innerHTML="<img class=plyr1 src=./dices/dice6.png alt=Dice6>";
 }
+
+//SHORTCUT OF ABOVE If-Else =>document.querySelector(".plyr2").setAttribute("src","./dices/dice" +b+".png").
 
 if(a==b){
     c.innerHTML="Draw";
