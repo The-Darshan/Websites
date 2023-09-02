@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="dicegame.css">
+</head>
+<body>
+    
+<div id="wrapper">
+    <h1>The Two Teams is Draw</h1>
+    <div class="playername">
+        <div class="plyr1name"></div>
+        <div class="plyr2name"></div>
+    </div>
+        <div id="dices">
+            <div id="d1">
+                <img class="plyr1" src="./dices/dice6.png" alt="Dice6">
+            </div>
+            <div id="d2">
+                <img class="plyr2" src="./dices/dice6.png" alt="Dice6">
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="button1">Play Again</div>
+            <div class="button2">Restart</div>
+        </div>
+</div>
+<script src="dicegame.js"></script>
+
+</body>
+</html>
+
+//CSS
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #4ECCA3;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+}
+#wrapper{
+    width: 100%;
+    height: 100%;
+    background-color:#393E46;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 50px;
+    padding-top: 30px;
+}
+#wrapper h1{
+    font-weight: 999;
+    line-height: 130px;
+    width: 60%;
+    font-family: 'Lobster', cursive;
+    font-size: 150px;
+    text-align: center;
+}
+#dices{
+    display: flex;
+    gap: 150px;
+}
+.plyr1{
+    width:200px;
+    height:200px;
+}
+.plyr2{
+    width: 200px;
+    height: 200px;
+}
+.playername{
+    display: flex;
+    gap: 120px;
+}
+.plyr1name , .plyr2name{
+    font-family: 'Lobster', cursive;
+    width: 200px;
+    height: 30px;
+    color: #4ECCA3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+    font-family: 'Lobster', cursive;
+}
+.button1,.button2{
+    font-size: 30px;
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #4ECCA3;
+    border-radius: 10px;
+    border: 3px solid white;
+}
+.button1:hover{
+    cursor: pointer;
+}
+.button2:hover{
+    cursor: pointer;
+}
+
+//JAVASCRIPT
+
+let plyr1Name;
+let plyr2Name
+function restart(){
+plyr1Name = prompt("Enter Player 1 Name ");
+plyr2Name = prompt("Enter Player 2 Name ");
+
+}
+restart()
+
+
+function winnercalc(){
+    document.querySelector(".plyr1name").innerHTML=plyr1Name;
+    document.querySelector(".plyr2name").innerHTML=plyr2Name;
+    let dice1=document.querySelector("#d1")
+    let dice2= document.querySelector("#d2")
+    
+    function randomIntGenerator(min,max){
+       return (Math.floor(Math.random()*(max-min))+min);
+    }
+
+let a = randomIntGenerator(1,6);
+let b = randomIntGenerator(1,6);
+
+let c = document.querySelector("#wrapper h1");
+
+if( a== 1){
+    dice1.innerHTML="<img class=plyr1 src=./dices/dice1.png alt=Dice6>";
+}
+else if(a==2){
+    dice1.innerHTML="<img class=plyr1 src=./dices/dice2.png alt=Dice6>"; 
+}
+else if(a==3){
+    dice1.innerHTML="<img class=plyr1 src=./dices/dice3.png alt=Dice6>";
+}
+else if(a==4){
+    dice1.innerHTML="<img class=plyr1 src=./dices/dice4.png alt=Dice6>";
+}
+else if(a==5){
+    dice1.innerHTML="<img class=plyr1 src=./dices/dice5.png alt=Dice6>";
+}
+else{
+    dice1.innerHTML="<img class=plyr1 src=./dices/dice6.png alt=Dice6>";
+}
+
+if(b== 1){
+    dice2.innerHTML="<img class=plyr1 src=./dices/dice1.png alt=Dice6>";
+}
+else if(b==2){
+    dice2.innerHTML="<img class=plyr1 src=./dices/dice2.png alt=Dice6>"; 
+}
+else if(b==3){
+    dice2.innerHTML="<img class=plyr1 src=./dices/dice3.png alt=Dice6>";
+}
+else if(b==4){
+    dice2.innerHTML="<img class=plyr1 src=./dices/dice4.png alt=Dice6>";
+}
+else if(b==5){
+    dice2.innerHTML="<img class=plyr1 src=./dices/dice5.png alt=Dice6>";
+}
+else{
+    dice2.innerHTML="<img class=plyr1 src=./dices/dice6.png alt=Dice6>";
+}
+
+if(a==b){
+    c.innerHTML="Draw";
+}
+else if(a>b){
+    c.innerHTML=`${plyr1Name} is Winner`
+}
+else{
+    c.innerHTML=`${plyr2Name} is Winner` 
+}
+}
+winnercalc();
+let playAgain = document.querySelector(".button1");
+
+playAgain.addEventListener("click",()=>{
+    winnercalc();
+})
+
+let restartgame = document.querySelector(".button2");
+
+restartgame.addEventListener("click",()=>{
+ restart();
+ winnercalc();
+})
