@@ -119,6 +119,7 @@ html,body{
 }
 
 //JAVASCRIPT
+// 1st Method
 
 var ansvalue = "";
 var ansdisplay = document.querySelector("#ansdisplayer");
@@ -155,3 +156,38 @@ button.addEventListener("click",function(e){
 })
 }
 )
+
+// 2nd Method
+
+const answer = document.getElementById("ansdisplayer")
+const allbutton = document.querySelectorAll("#a") 
+const specialbutton = document.querySelectorAll(".c")
+const equal = document.querySelector(".b")
+const remove = document.querySelector(".e")
+const removeoneele = document.querySelector(".d")
+let result=""
+let ans=""
+let i=1;
+remove.addEventListener("click",function(){
+    result=""
+    answer.innerHTML="0";
+})
+
+removeoneele.addEventListener("click",function(){
+    let length = result.length-i
+    let yo =result.substring(0,length)
+    result=yo
+    answer.innerHTML=yo
+})
+
+allbutton.forEach((element)=>{
+    element.addEventListener("click",function(){
+        result+=element.innerHTML
+        answer.innerHTML=result
+    })
+})
+equal.addEventListener("click",function(){
+    ans = eval(result)
+    answer.innerHTML=ans
+    result=ans
+})
